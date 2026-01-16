@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuir Québec - Événements LGBT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header avec drapeau cuir -->
+    <header class="leather-flag">
+        <div class="flag-stripes">
+            <div class="stripe black"></div>
+            <div class="stripe blue-dark"></div>
+            <div class="stripe blue-medium"></div>
+            <div class="stripe blue-light"></div>
+            <div class="stripe blue-lighter"></div>
+            <div class="stripe blue-light"></div>
+            <div class="stripe blue-medium"></div>
+            <div class="stripe blue-dark"></div>
+            <div class="stripe black"></div>
+        </div>
+        <button id="adminBtn" class="heart-button" aria-label="Connexion administrateur">
+            <span class="heart">❤️</span>
+        </button>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container">
+        <!-- Titre -->
+        <section class="hero">
+            <div id="logoutContainer" class="logout-container" style="display: none;">
+                <button id="logoutBtn" class="logout-btn">
+                    <span>🚪</span> Déconnexion
+                </button>
+            </div>
+            <h1>Cuir Québec</h1>
+            <p class="subtitle">Événements de la communauté cuir et fétish LGBT de Québec</p>
+        </section>
+
+        <!-- Bouton ajouter événement (admin seulement) -->
+        <section id="addEventSection" class="add-event-section" style="display: none;">
+            <button id="addEventBtn" class="btn-primary">
+                <span>➕</span> Ajouter un événement
+            </button>
+        </section>
+
+        <!-- Liste des événements -->
+        <section id="eventsList" class="events-grid">
+            <div class="no-events">
+                <p class="no-events-title">Aucun événement pour le moment</p>
+                <p id="noEventsSubtitle" class="no-events-subtitle"></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Cuir Québec - Communauté LGBT</p>
+    </footer>
+
+    <!-- Modal de connexion -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Connexion Administrateur</h2>
+                <button class="close-btn" id="closeLoginBtn" aria-label="Fermer">✕</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" placeholder="Entrez le mot de passe" required>
+                </div>
+                <p id="loginError" class="error-message"></p>
+                <button type="submit" class="btn-primary btn-full">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal d'événement -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="eventModalTitle">Nouvel événement</h2>
+                <button class="close-btn" id="closeEventBtn" aria-label="Fermer">✕</button>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Titre de l'événement</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Heure</label>
+                        <input type="time" id="eventTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation">Lieu</label>
+                    <input type="text" id="eventLocation" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventRegLink">Lien d'inscription</label>
+                    <input type="url" id="eventRegLink" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label for="eventMinAge">Âge minimum</label>
+                    <input type="number" id="eventMinAge" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDressCode">Dress Code</label>
+                    <textarea id="eventDressCode" rows="3" placeholder="Ex: Cuir, latex, uniforme..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-flex">
+                        <span id="eventSubmitText">Créer l'événement</span>
+                    </button>
+                    <button type="button" class="btn-secondary" id="cancelEventBtn">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
