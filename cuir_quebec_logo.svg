@@ -1,0 +1,95 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dégradé exact du Leather Pride Flag -->
+    <linearGradient id="leatherStripes" x1="0%" y1="0%" x2="0%" y2="100%">
+      <!-- Bande 1: Noir -->
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="11.11%" style="stop-color:#000000;stop-opacity:1" />
+      <!-- Bande 2: Bleu royal -->
+      <stop offset="11.11%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <stop offset="22.22%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <!-- Bande 3: Noir -->
+      <stop offset="22.22%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="33.33%" style="stop-color:#000000;stop-opacity:1" />
+      <!-- Bande 4: Bleu royal -->
+      <stop offset="33.33%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <stop offset="44.44%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <!-- Bande 5: BLANC (centre) -->
+      <stop offset="44.44%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="55.56%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <!-- Bande 6: Bleu royal -->
+      <stop offset="55.56%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <stop offset="66.67%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <!-- Bande 7: Noir -->
+      <stop offset="66.67%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="77.78%" style="stop-color:#000000;stop-opacity:1" />
+      <!-- Bande 8: Bleu royal -->
+      <stop offset="77.78%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <stop offset="88.89%" style="stop-color:#1F3A93;stop-opacity:1" />
+      <!-- Bande 9: Noir -->
+      <stop offset="88.89%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="roughEffect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="0.5"/>
+    </filter>
+    
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+  
+  <!-- Cercle principal avec les bandes du Leather Pride Flag -->
+  <circle cx="200" cy="200" r="185" fill="url(#leatherStripes)" stroke="#000000" stroke-width="4"/>
+  
+  <!-- Cœur rouge (dans le coin supérieur gauche comme le drapeau original) -->
+  <path d="M 130 95
+           C 130 80, 115 65, 100 65
+           C 80 65, 65 80, 65 100
+           C 65 130, 130 185, 130 185
+           C 130 185, 195 130, 195 100
+           C 195 80, 180 65, 160 65
+           C 145 65, 130 80, 130 95 Z" 
+        fill="#E80035" 
+        filter="url(#shadow)"
+        transform="rotate(-45 130 125)"/>
+  
+  
+  <!-- Texte CUIR -->
+  <text x="200" y="270" 
+        font-family="Impact, Arial Black, sans-serif" 
+        font-size="92" 
+        font-weight="900" 
+        text-anchor="middle" 
+        fill="#FFFFFF"
+        stroke="#000000"
+        stroke-width="5"
+        letter-spacing="2"
+        filter="url(#roughEffect)">
+    CUIR
+  </text>
+  
+  <!-- Texte QUÉBEC -->
+  <text x="200" y="340" 
+        font-family="Impact, Arial Black, sans-serif" 
+        font-size="60" 
+        font-weight="900" 
+        text-anchor="middle" 
+        fill="#FFFFFF"
+        stroke="#000000"
+        stroke-width="4"
+        letter-spacing="6"
+        filter="url(#roughEffect)">
+    QUÉBEC
+  </text>
+  
+  <!-- Bordure extérieure décorative -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.3"/>
+</svg>
